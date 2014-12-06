@@ -1,4 +1,4 @@
-﻿LiveSplit.Amnesia
+﻿LiveSplit.Hitman Absolution
 =================
 
 This is a [LiveSplit] component for Hitman: Absolution

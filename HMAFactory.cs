@@ -37,7 +37,7 @@ namespace LiveSplit.HMA
 
         public string UpdateURL
         {
-            get { return "http://fatalis.pw/livesplit/update/"; }
+            get { return "https://raw.githubusercontent.com/SuiMachine/"; }
         }
 
         public Version Version
@@ -47,7 +47,7 @@ namespace LiveSplit.HMA
 
         public string XMLURL
         {
-            get { return this.UpdateURL + "Components/update.LiveSplit.HMA.xml"; }
+            get { return this.UpdateURL + "LiveSplit.HitmanAbsolution/Master/Components/update.LiveSplit.HMA.xml"; }
         }
     }
 }
