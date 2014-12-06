@@ -9,7 +9,7 @@ namespace LiveSplit.HMA
 {
     class GameMemory
     {
-        public event EventHandler<LoadingChangedEventArgs> OnLoadingChanged; 
+        public event EventHandler<LoadingChangedEventArgs> OnLoadingChanged;
 
         private Task _thread;
         private SynchronizationContext _uiThread;
@@ -72,70 +72,56 @@ namespace LiveSplit.HMA
             if (p == null || p.HasExited)
                 return false;
 
-            // the following code has a very small chance to crash the game due to not suspending threads while writing memory
-            // commented out stuff is for the cracked version of the game (easier to debug when there's no copy protection)
-
-            // overwrite unused alignment byte with and initialize as our "is loading" var
-            // this is [49EDC2] as seen below
-            //if (!p.WriteBytes(p.MainModule.BaseAddress + 0x9EDC2, 0))
-            //    return false;
-            //if (!p.WriteBytes(p.MainModule.BaseAddress + 0x9DE12, 0))
-                //return false;
-
-            // the following patches are in hma.cLuxMapHandler::CheckMapChange(afTimeStep)
-            // (the game kindly provides us with a .pdb)
-
-            // overwrite useless code and set loading var to 1
-            //
-            // patch
-            // 0049EE93      C74424 64 00000000         MOV     DWORD PTR SS:[ESP+64], 0
-            // to
-            // 0049EE93      C605 C2ED4900 01           MOV     BYTE PTR DS:[49EDC2], 1
-            // 0049EE9A      90                         NOP
-            //if (!p.WriteBytes(p.MainModule.BaseAddress + 0x9EE93, 0xC6, 0x05, 0xC2, 0xED, 0x49, 0x00, 0x01, 0x90))
-            //    return false;
-            //if (!p.WriteBytes(p.MainModule.BaseAddress + 0x9DEE3, 0xC6, 0x05, 0x12, 0xDE, 0x49, 0x00, 0x01, 0x90))
-                //return false;
-
-            // overwrite useless code and set loading var to 0
-            //
-            // patch
-            // 0049F061      C64424 70 04               MOV     BYTE PTR SS:[ESP+70], 4
-            // 0049F066      E8 9520F6FF                CALL    ProgLog
-            // to
-            // 0049F061      C605 C2ED4900 00           MOV     BYTE PTR DS:[49EDC2], 0
-            // 0049F068      90                         NOP
-            // 0049F069      90                         NOP
-            // 0049F06A      90                         NOP
-            //if (!p.WriteBytes(p.MainModule.BaseAddress + 0x9F062, 0x05, 0xC2, 0xED, 0x49, 0x00, 0x00, 0x90, 0x90, 0x90))
-            //    return false;
-            //if (!p.WriteBytes(p.MainModule.BaseAddress + 0x9E0B2, 0x05, 0x12, 0xDE, 0x49, 0x00, 0x00, 0x90, 0x90, 0x90))
-                //return false;
-
             return true;
         }
 
         void HandleProcess(Process game, CancellationTokenSource cts)
         {
-            bool prevIsLoading = false;
+            bool prevIsInLoadingScreen = false;
+            bool prevIsInMenu = false;
+            bool prevIsOutOfFocus = false;
 
             while (!game.HasExited && !cts.IsCancellationRequested)
             {
-                bool isLoading;
-                game.ReadBool(game.MainModule.BaseAddress + 0xE2168C, out isLoading);
+                bool isActuallyLoading, IsInLoadingScreen, IsInMenu, IsOutOfFocus;
+                game.ReadBool(game.MainModule.BaseAddress + 0xE53E20, out IsInLoadingScreen); //not actual, but close enough
+                game.ReadBool(game.MainModule.BaseAddress + 0xD61C7B, out IsInMenu);
+                game.ReadBool(game.MainModule.BaseAddress + 0xE31F4D, out IsOutOfFocus);  //1 if in Game, 0 if in Menus, alt-tabbed
 
-                if (isLoading != prevIsLoading)
+                if (IsInLoadingScreen != prevIsInLoadingScreen || IsInMenu != prevIsInMenu || IsOutOfFocus != prevIsOutOfFocus) 
                 {
-                    _uiThread.Post(d => {
+                    if (IsInLoadingScreen == true)
+                        isActuallyLoading = true;
+                    else
+                    {
+                        if (IsOutOfFocus == false)
+                        {
+                            if (IsInMenu == true)
+                                isActuallyLoading = false;
+                            else
+                                isActuallyLoading = true;
+                        }
+                        else
+                            isActuallyLoading = false;
+                    }
+                    _uiThread.Post(d =>
+                    {
                         if (this.OnLoadingChanged != null)
-                            this.OnLoadingChanged(this, new LoadingChangedEventArgs(isLoading));
+                            this.OnLoadingChanged(this, new LoadingChangedEventArgs(isActuallyLoading));
                     }, null);
                 }
 
-                prevIsLoading = isLoading;
+                prevIsInLoadingScreen = IsInLoadingScreen;
+                prevIsInMenu = IsInMenu;
+                prevIsOutOfFocus = IsOutOfFocus;
 
                 Thread.Sleep(15);
             }
+        }
+
+        private void DeepPointer()
+        {
+            throw new NotImplementedException();
         }
     }
 

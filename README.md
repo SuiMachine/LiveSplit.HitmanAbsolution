@@ -1,1 +1,16 @@
-﻿Something something, based on a code by load remover for Amnesia: The Dark Descent by fatalist_.
+﻿LiveSplit.Amnesia
+=================
+
+This is a [LiveSplit] component for Hitman: Absolution
+
+Features
+--------
+
+  * Removes face and hopefully loading times.
+
+Requirements
+------------
+
+  * Hitman: Absolution on Steam
+  * LiveSplit 1.4+
+  * .NET Framework 4
