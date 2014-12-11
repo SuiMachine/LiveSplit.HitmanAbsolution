@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeepPointer.cs" />
     <Compile Include="HMAComponent.cs" />
     <Compile Include="HMAFactory.cs" />
     <Compile Include="GameMemory.cs" />
