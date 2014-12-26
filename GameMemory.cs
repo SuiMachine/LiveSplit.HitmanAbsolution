@@ -85,22 +85,20 @@ namespace LiveSplit.HMA
             bool prevIsInMenu = false;
             bool prevIsOutOfFocus = false;
             bool prevIsTerminusElevatorLoading = false;
-            bool prevIsRosewoodLoading = false;
+            bool prevIsRosewoodCutscene = false;
 
             while (!game.HasExited && !cts.IsCancellationRequested)
             {
-                bool isActuallyLoading, IsInLoadingScreen, IsInMenu, IsOutOfFocus, IsTerminusElevatorLoading, IsRosewoodLoading;
+                bool isActuallyLoading, IsInLoadingScreen, IsInMenu, IsOutOfFocus, IsTerminusElevatorLoading, IsRosewoodCutscene;
                 game.ReadBool(game.MainModule.BaseAddress + 0xE53E20, out IsInLoadingScreen); //not actual, but close enough
-                game.ReadBool(game.MainModule.BaseAddress + 0xE321FC, out IsRosewoodLoading); //or HMA.exe+E38CB4
+                game.ReadBool(game.MainModule.BaseAddress + 0xE321FC, out IsRosewoodCutscene);
                 game.ReadBool(game.MainModule.BaseAddress + 0xD61C7B, out IsInMenu);
                 game.ReadBool(game.MainModule.BaseAddress + 0xE31F4D, out IsOutOfFocus);
                 _isTerminusElevatorLoading.Deref(game, out IsTerminusElevatorLoading);
 
-                if (IsInLoadingScreen != prevIsInLoadingScreen || IsInMenu != prevIsInMenu || IsOutOfFocus != prevIsOutOfFocus || IsTerminusElevatorLoading != prevIsTerminusElevatorLoading || IsRosewoodLoading != prevIsRosewoodLoading) 
+                if (IsInLoadingScreen != prevIsInLoadingScreen || IsInMenu != prevIsInMenu || IsOutOfFocus != prevIsOutOfFocus || IsTerminusElevatorLoading != prevIsTerminusElevatorLoading || IsRosewoodCutscene != prevIsRosewoodCutscene) 
                 {
-                    if (IsInLoadingScreen == true)
-                        isActuallyLoading = true;
-                    else if (IsRosewoodLoading == true)
+                    if (IsInLoadingScreen == true || IsRosewoodCutscene == true || IsTerminusElevatorLoading==true)
                         isActuallyLoading = true;
                     else
                     {
@@ -111,8 +109,6 @@ namespace LiveSplit.HMA
                             else
                                 isActuallyLoading = true;
                         }
-                        else if (IsTerminusElevatorLoading == true)
-                            isActuallyLoading = true;
                         else
                             isActuallyLoading = false;
                     }
@@ -122,11 +118,11 @@ namespace LiveSplit.HMA
                             this.OnLoadingChanged(this, new LoadingChangedEventArgs(isActuallyLoading));
                     }, null);
                 }
-
                 prevIsInLoadingScreen = IsInLoadingScreen;
                 prevIsInMenu = IsInMenu;
                 prevIsOutOfFocus = IsOutOfFocus;
                 prevIsTerminusElevatorLoading = IsTerminusElevatorLoading;
+                prevIsRosewoodCutscene = IsRosewoodCutscene;
 
                 Thread.Sleep(15);
             }
