@@ -11,13 +11,6 @@ Features
   * Splits after each game section / at result screens (configurable).
   
 Currently the component isn't fully tested. If, I consider it to be ready, I'll probably ask to add it to Livesplit.
-
-Requirements
-------------
-
-  * Hitman: Absolution on Steam (Cracked and previous versions are not supported)
-  * LiveSplit 1.4+
-  * .NET Framework 4
   
 
 Install

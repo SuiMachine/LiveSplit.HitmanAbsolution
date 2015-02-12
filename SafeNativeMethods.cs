@@ -10,23 +10,7 @@ namespace LiveSplit.HMA
             IntPtr hProcess,
             IntPtr lpBaseAddress,
             [Out] byte[] lpBuffer,
-            int dwSize,
+            int dwSize, // should be IntPtr if we ever need to read a size bigger than 32 bit address space
             out int lpNumberOfBytesRead);
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        public static extern bool WriteProcessMemory(
-            IntPtr hProcess,
-            IntPtr lpBaseAddress,
-            [Out] byte[] lpBuffer,
-            int dwSize,
-            out int lpNumberOfBytesWritten);
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        public static extern bool VirtualProtectEx(
-            IntPtr hProcess,
-            IntPtr lpAddress,
-            int dwSize,
-            uint flNewProtect,
-            out uint lpflOldProtect);
     }
 }

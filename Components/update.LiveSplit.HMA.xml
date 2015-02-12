@@ -1,4 +1,16 @@
 <updates>
+    <update version="0.9.5">
+        <files>
+            <file path="Components/LiveSplit.HMA.dll" status="changed"/>
+        </files>
+        <changelog>
+            <change>
+                Added autosplitting.
+				Expended logic of Terminus Elevator load removing.
+				Added condition to handle the game crashing.
+            </change>
+        </changelog>
+    </update>
     <update version="0.9.1">
         <files>
             <file path="Components/LiveSplit.HMA.dll" status="changed"/>
