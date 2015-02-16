@@ -452,7 +452,7 @@ namespace LiveSplit.HMA
                                     else
                                         isActuallyLoading = true;
                                 }
-                                else if(IsTerminusElevatorLoading == 1 || (CurrentLevel==2 && CurrentSection==1))
+                                else if ((CurrentLevel == 2 && CurrentSection == 0 && IsTerminusElevatorLoading == 1) || (CurrentLevel == 2 && CurrentSection == 1))
                                 {
                                     isActuallyLoading = true;
                                 }
