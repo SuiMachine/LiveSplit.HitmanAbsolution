@@ -96,6 +96,7 @@ namespace LiveSplit.HMA
             if (_state.CurrentPhase == TimerPhase.Running && !_gameMemory.splitStates[(int)split] &&
                 ((split == GameMemory.SplitArea.C0_Garden && this.Settings._00Garden) ||
                 (split == GameMemory.SplitArea.C0_Greenhouse && this.Settings._00Greenhouse) ||
+                (split == GameMemory.SplitArea.C0_Cliffside && this.Settings._00Cliffside) ||
                 (split == GameMemory.SplitArea.C0_Mansion && this.Settings._00Mansion) ||
                 (split == GameMemory.SplitArea.C0_Kottidor && this.Settings._00MansionUpper) ||
                 (split == GameMemory.SplitArea.C1_Chinatown && this.Settings._01Chinatown) ||

@@ -11,6 +11,7 @@ namespace LiveSplit.HMA
         public bool AutoStart { get; set; }
         public bool _00Garden { get; set; }
         public bool _00Greenhouse { get; set; }
+        public bool _00Cliffside { get; set; }
         public bool _00Mansion { get; set; }
         public bool _00MansionUpper { get; set; }
         public bool _01Chinatown { get; set; }
@@ -63,10 +64,11 @@ namespace LiveSplit.HMA
         public bool _25BurnwoodFamilyTomb { get; set; } 
         public bool _25Crematorium { get; set; } 
 
-        private const bool DEFAULT_AUTORESET = true;
+        private const bool DEFAULT_AUTORESET = false;
         private const bool DEFAULT_AUTOSTART = true;
         private const bool DEFAULT_00GARDEN = false;
         private const bool DEFAULT_00GREENHOUSE = true;
+        private const bool DEFAULT_00CLIFFSIDE = false;
         private const bool DEFAULT_00MANSION = false;
         private const bool DEFAULT_00MANSIONUPPER = true;
         private const bool DEFAULT_01CHINATOWN = true;
@@ -127,6 +129,7 @@ namespace LiveSplit.HMA
             this.chkAutoStart.DataBindings.Add("Checked", this, "AutoStart", false, DataSourceUpdateMode.OnPropertyChanged);
             this.chk00Garden.DataBindings.Add("Checked", this, "_00Garden", false, DataSourceUpdateMode.OnPropertyChanged);
             this.chk00Greenhouse.DataBindings.Add("Checked", this, "_00Greenhouse", false, DataSourceUpdateMode.OnPropertyChanged);
+            this.chk00Cliffside.DataBindings.Add("Checked", this, "_00Cliffside", false, DataSourceUpdateMode.OnPropertyChanged);
             this.chk00Mansion.DataBindings.Add("Checked", this, "_00Mansion", false, DataSourceUpdateMode.OnPropertyChanged);
             this.chk00MansionUpper.DataBindings.Add("Checked", this, "_00MansionUpper", false, DataSourceUpdateMode.OnPropertyChanged);
             this.chk01ChinatownSquare.DataBindings.Add("Checked", this, "_01Chinatown", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -184,6 +187,7 @@ namespace LiveSplit.HMA
             this.AutoStart = DEFAULT_AUTOSTART;
             this._00Garden = DEFAULT_00GARDEN;
             this._00Greenhouse = DEFAULT_00GREENHOUSE;
+            this._00Cliffside = DEFAULT_00CLIFFSIDE;
             this._00Mansion = DEFAULT_00MANSION;
             this._00MansionUpper = DEFAULT_00MANSIONUPPER;
             this._01Chinatown = DEFAULT_01CHINATOWN;
@@ -247,6 +251,7 @@ namespace LiveSplit.HMA
             settingsNode.AppendChild(ToElement(doc, "AutoStart", this.AutoStart));
             settingsNode.AppendChild(ToElement(doc, "Garden", this._00Garden));
             settingsNode.AppendChild(ToElement(doc, "Greenhouse", this._00Greenhouse));
+            settingsNode.AppendChild(ToElement(doc, "Cliffside", this._00Cliffside));
             settingsNode.AppendChild(ToElement(doc, "Mansion", this._00Mansion));
             settingsNode.AppendChild(ToElement(doc, "MansionUpper", this._00MansionUpper));
             settingsNode.AppendChild(ToElement(doc, "Chinatown", this._01Chinatown));
@@ -308,6 +313,7 @@ namespace LiveSplit.HMA
             this.AutoStart = ParseBool(settings, "AutoStart", DEFAULT_AUTOSTART);
             this._00Garden = ParseBool(settings, "Garden", DEFAULT_00GARDEN);
             this._00Greenhouse = ParseBool(settings, "Greenhouse", DEFAULT_00GREENHOUSE);
+            this._00Cliffside = ParseBool(settings, "Cliffside", DEFAULT_00CLIFFSIDE);
             this._00Mansion = ParseBool(settings, "Mansion", DEFAULT_00MANSION);
             this._00MansionUpper = ParseBool(settings, "MansionUpper", DEFAULT_00MANSIONUPPER);
             this._01Chinatown = ParseBool(settings, "Chinatown", DEFAULT_01CHINATOWN);
@@ -378,10 +384,11 @@ namespace LiveSplit.HMA
 
         private void radialPresetAllSections_CheckedChanged(object sender, EventArgs e)
         {
-            this.chkAutoReset.Checked = true;
+            this.chkAutoReset.Checked = false;
             this.chkAutoStart.Checked = true;
             this.chk00Garden.Checked = true;
             this.chk00Greenhouse.Checked = true;
+            this.chk00Cliffside.Checked = true;
             this.chk00Mansion.Checked = true;
             this.chk00MansionUpper.Checked = true;
             this.chk01ChinatownSquare.Checked = true;
@@ -437,10 +444,11 @@ namespace LiveSplit.HMA
 
         private void radialPresetOnlyLoadRemoving_CheckedChanged(object sender, EventArgs e)
         {
-            this.chkAutoReset.Checked = true;
+            this.chkAutoReset.Checked = false;
             this.chkAutoStart.Checked = true;
             this.chk00Garden.Checked = false;
             this.chk00Greenhouse.Checked = false;
+            this.chk00Cliffside.Checked = false;
             this.chk00Mansion.Checked = false;
             this.chk00MansionUpper.Checked = false;
             this.chk01ChinatownSquare.Checked = false;
@@ -496,10 +504,11 @@ namespace LiveSplit.HMA
 
         private void radialPresetKotti_CheckedChanged(object sender, EventArgs e)
         {
-            this.chkAutoReset.Checked = true;
+            this.chkAutoReset.Checked = false;
             this.chkAutoStart.Checked = true;
             this.chk00Garden.Checked = false;
             this.chk00Greenhouse.Checked = false;
+            this.chk00Cliffside.Checked = false;
             this.chk00Mansion.Checked = false;
             this.chk00MansionUpper.Checked = true;
             this.chk01ChinatownSquare.Checked = true;
@@ -555,10 +564,11 @@ namespace LiveSplit.HMA
 
         private void radialPresetChaptersOnly_CheckedChanged(object sender, EventArgs e)
         {
-            this.chkAutoReset.Checked = true;
+            this.chkAutoReset.Checked = false;
             this.chkAutoStart.Checked = true;
             this.chk00Garden.Checked = false;
             this.chk00Greenhouse.Checked = false;
+            this.chk00Cliffside.Checked = false;
             this.chk00Mansion.Checked = false;
             this.chk00MansionUpper.Checked = true;
             this.chk01ChinatownSquare.Checked = true;
@@ -610,6 +620,12 @@ namespace LiveSplit.HMA
             this.chk25_CementaryEntrance.Checked = false;
             this.chk25_BurnwoodFamilyTomb.Checked = false;
             this.chk25_Crematorium.Checked = true;
+        }
+
+        private void chkAutoReset_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAutoReset.Checked == true)
+                MessageBox.Show("Warning! This may reset your splits if the game crashes. Because of that, it's not recommened to use this option.", "Warning!", MessageBoxButtons.OK);
         }
     }
 }

@@ -15,8 +15,9 @@ namespace LiveSplit.HMA
             None,
             C0_Garden,
             C0_Greenhouse,
+            C0_Cliffside,
             C0_Mansion,
-            C0_Kottidor,        //NOT WORKING
+            C0_Kottidor,
             C1_Chinatown,
             C2_TerminusBottom,
             C2_TerminusUpper,
@@ -31,7 +32,7 @@ namespace LiveSplit.HMA
             C4_DerelictBuilding,
             C4_Conveniencestore,
             C4_LoadingArea,
-            C4_ChineseNewYear,  //Not working
+            C4_ChineseNewYear,
             C6_Victoria,        //No Chapter 5
             C6_Orphanage,
             C6_CentralHeating,
@@ -229,9 +230,13 @@ namespace LiveSplit.HMA
                             {
                                 Split(SplitArea.C0_Garden, frameCounter);
                             }
-                            else if(CurrentLevel == 0 && CurrentSection == 3)
+                            else if(CurrentLevel == 0 && CurrentSection == 2)
                             {
                                 Split(SplitArea.C0_Greenhouse, frameCounter);
+                            }
+                            else if (CurrentLevel == 0 && CurrentSection == 3)
+                            {
+                                Split(SplitArea.C0_Cliffside, frameCounter);
                             }
                             else if(CurrentLevel == 0 && CurrentSection == 4 && !IsResultScreen)
                             {

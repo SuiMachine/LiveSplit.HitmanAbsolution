@@ -65,7 +65,7 @@ namespace LiveSplit.HMA
 
         public string UpdateURL
         {
-            get { return "https://raw.githubusercontent.com/SuiMachine/LiveSplit.HitmanAbsolution/master/"; }
+            get { return "https://raw.githubusercontent.com/SuiMachine/LiveSplit.HitmanAbsolution/Master/"; }
         }
 
         public Version Version

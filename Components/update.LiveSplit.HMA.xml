@@ -1,4 +1,25 @@
 <updates>
+    <update version="0.9.7">
+        <files>
+            <file path="Components/LiveSplit.HMA.dll" status="changed"/>
+        </files>
+        <changelog>
+            <change>
+				Added Cliffside split.
+				Added Warning about auto resetting.
+            </change>
+        </changelog>
+    </update>
+    <update version="0.9.6">
+        <files>
+            <file path="Components/LiveSplit.HMA.dll" status="changed"/>
+        </files>
+        <changelog>
+            <change>
+				Further improved Terminus Elevator logic.
+            </change>
+        </changelog>
+    </update>
     <update version="0.9.5">
         <files>
             <file path="Components/LiveSplit.HMA.dll" status="changed"/>

@@ -113,6 +113,7 @@
             this.radialPresetOnlyLoadRemoving = new System.Windows.Forms.RadioButton();
             this.radialPresetChaptersOnly = new System.Windows.Forms.RadioButton();
             this.radialPresetAllSections = new System.Windows.Forms.RadioButton();
+            this.chk00Cliffside = new System.Windows.Forms.CheckBox();
             this.gbEndSplits.SuspendLayout();
             this.tlpEndSplits.SuspendLayout();
             this.gbStartSplits.SuspendLayout();
@@ -141,30 +142,9 @@
             this.tlpEndSplits.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpEndSplits.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpEndSplits.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpEndSplits.Controls.Add(this.chk03Station, 0, 15);
-            this.tlpEndSplits.Controls.Add(this.chk03Drugs, 0, 14);
-            this.tlpEndSplits.Controls.Add(this.chk03PigeonCoop, 0, 13);
-            this.tlpEndSplits.Controls.Add(this.chk03TheLibrary, 0, 12);
-            this.tlpEndSplits.Controls.Add(this.chk03BurningHotel, 0, 11);
-            this.tlpEndSplits.Controls.Add(this.label4, 0, 10);
-            this.tlpEndSplits.Controls.Add(this.chk02UpperFloors, 0, 9);
-            this.tlpEndSplits.Controls.Add(this.chk02TerminusHotel, 0, 8);
-            this.tlpEndSplits.Controls.Add(this.label3, 0, 7);
-            this.tlpEndSplits.Controls.Add(this.chk01ChinatownSquare, 0, 6);
-            this.tlpEndSplits.Controls.Add(this.label2, 0, 5);
-            this.tlpEndSplits.Controls.Add(this.chk00Mansion, 0, 3);
             this.tlpEndSplits.Controls.Add(this.chk00Garden, 0, 1);
             this.tlpEndSplits.Controls.Add(this.chk00Greenhouse, 0, 2);
             this.tlpEndSplits.Controls.Add(this.label1, 0, 0);
-            this.tlpEndSplits.Controls.Add(this.chk00MansionUpper, 0, 4);
-            this.tlpEndSplits.Controls.Add(this.label5, 0, 16);
-            this.tlpEndSplits.Controls.Add(this.chk04Courtyard, 0, 17);
-            this.tlpEndSplits.Controls.Add(this.chk04Club, 0, 18);
-            this.tlpEndSplits.Controls.Add(this.chk04DressingRooms, 0, 19);
-            this.tlpEndSplits.Controls.Add(this.chk04DerelictBuilding, 0, 20);
-            this.tlpEndSplits.Controls.Add(this.chk04Store, 0, 21);
-            this.tlpEndSplits.Controls.Add(this.chk04LoadingArea, 0, 22);
-            this.tlpEndSplits.Controls.Add(this.chk04ChineseNewYear, 0, 23);
             this.tlpEndSplits.Controls.Add(this.label6, 1, 0);
             this.tlpEndSplits.Controls.Add(this.chk06Victoria, 1, 1);
             this.tlpEndSplits.Controls.Add(this.chk06Orphanage, 1, 2);
@@ -214,6 +194,28 @@
             this.tlpEndSplits.Controls.Add(this.chk25_CementaryEntrance, 2, 21);
             this.tlpEndSplits.Controls.Add(this.chk25_BurnwoodFamilyTomb, 2, 22);
             this.tlpEndSplits.Controls.Add(this.chk25_Crematorium, 2, 23);
+            this.tlpEndSplits.Controls.Add(this.chk04ChineseNewYear, 0, 24);
+            this.tlpEndSplits.Controls.Add(this.chk04LoadingArea, 0, 23);
+            this.tlpEndSplits.Controls.Add(this.chk04Store, 0, 22);
+            this.tlpEndSplits.Controls.Add(this.chk04DerelictBuilding, 0, 21);
+            this.tlpEndSplits.Controls.Add(this.chk04DressingRooms, 0, 20);
+            this.tlpEndSplits.Controls.Add(this.chk04Club, 0, 19);
+            this.tlpEndSplits.Controls.Add(this.chk04Courtyard, 0, 18);
+            this.tlpEndSplits.Controls.Add(this.label5, 0, 17);
+            this.tlpEndSplits.Controls.Add(this.chk03Station, 0, 16);
+            this.tlpEndSplits.Controls.Add(this.chk03Drugs, 0, 15);
+            this.tlpEndSplits.Controls.Add(this.chk03PigeonCoop, 0, 14);
+            this.tlpEndSplits.Controls.Add(this.chk03TheLibrary, 0, 13);
+            this.tlpEndSplits.Controls.Add(this.chk03BurningHotel, 0, 12);
+            this.tlpEndSplits.Controls.Add(this.label4, 0, 11);
+            this.tlpEndSplits.Controls.Add(this.chk02UpperFloors, 0, 10);
+            this.tlpEndSplits.Controls.Add(this.chk02TerminusHotel, 0, 9);
+            this.tlpEndSplits.Controls.Add(this.label3, 0, 8);
+            this.tlpEndSplits.Controls.Add(this.chk01ChinatownSquare, 0, 7);
+            this.tlpEndSplits.Controls.Add(this.label2, 0, 6);
+            this.tlpEndSplits.Controls.Add(this.chk00MansionUpper, 0, 5);
+            this.tlpEndSplits.Controls.Add(this.chk00Mansion, 0, 4);
+            this.tlpEndSplits.Controls.Add(this.chk00Cliffside, 0, 3);
             this.tlpEndSplits.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpEndSplits.Location = new System.Drawing.Point(3, 16);
             this.tlpEndSplits.Name = "tlpEndSplits";
@@ -243,7 +245,7 @@
             this.tlpEndSplits.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEndSplits.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpEndSplits.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpEndSplits.Size = new System.Drawing.Size(428, 574);
+            this.tlpEndSplits.Size = new System.Drawing.Size(428, 573);
             this.tlpEndSplits.TabIndex = 4;
             // 
             // chk03Station
@@ -251,7 +253,7 @@
             this.chk03Station.AutoSize = true;
             this.chk03Station.Checked = true;
             this.chk03Station.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk03Station.Location = new System.Drawing.Point(3, 347);
+            this.chk03Station.Location = new System.Drawing.Point(3, 369);
             this.chk03Station.Name = "chk03Station";
             this.chk03Station.Size = new System.Drawing.Size(86, 17);
             this.chk03Station.TabIndex = 21;
@@ -263,7 +265,7 @@
             this.chk03Drugs.AutoSize = true;
             this.chk03Drugs.Checked = true;
             this.chk03Drugs.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk03Drugs.Location = new System.Drawing.Point(3, 324);
+            this.chk03Drugs.Location = new System.Drawing.Point(3, 346);
             this.chk03Drugs.Name = "chk03Drugs";
             this.chk03Drugs.Size = new System.Drawing.Size(77, 17);
             this.chk03Drugs.TabIndex = 20;
@@ -275,7 +277,7 @@
             this.chk03PigeonCoop.AutoSize = true;
             this.chk03PigeonCoop.Checked = true;
             this.chk03PigeonCoop.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk03PigeonCoop.Location = new System.Drawing.Point(3, 301);
+            this.chk03PigeonCoop.Location = new System.Drawing.Point(3, 323);
             this.chk03PigeonCoop.Name = "chk03PigeonCoop";
             this.chk03PigeonCoop.Size = new System.Drawing.Size(87, 17);
             this.chk03PigeonCoop.TabIndex = 19;
@@ -287,7 +289,7 @@
             this.chk03TheLibrary.AutoSize = true;
             this.chk03TheLibrary.Checked = true;
             this.chk03TheLibrary.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk03TheLibrary.Location = new System.Drawing.Point(3, 278);
+            this.chk03TheLibrary.Location = new System.Drawing.Point(3, 300);
             this.chk03TheLibrary.Name = "chk03TheLibrary";
             this.chk03TheLibrary.Size = new System.Drawing.Size(79, 17);
             this.chk03TheLibrary.TabIndex = 18;
@@ -299,7 +301,7 @@
             this.chk03BurningHotel.AutoSize = true;
             this.chk03BurningHotel.Checked = true;
             this.chk03BurningHotel.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk03BurningHotel.Location = new System.Drawing.Point(3, 255);
+            this.chk03BurningHotel.Location = new System.Drawing.Point(3, 277);
             this.chk03BurningHotel.Name = "chk03BurningHotel";
             this.chk03BurningHotel.Size = new System.Drawing.Size(90, 17);
             this.chk03BurningHotel.TabIndex = 17;
@@ -310,7 +312,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(4, 233);
+            this.label4.Location = new System.Drawing.Point(4, 255);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 13);
@@ -322,7 +324,7 @@
             this.chk02UpperFloors.AutoSize = true;
             this.chk02UpperFloors.Checked = true;
             this.chk02UpperFloors.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk02UpperFloors.Location = new System.Drawing.Point(3, 209);
+            this.chk02UpperFloors.Location = new System.Drawing.Point(3, 231);
             this.chk02UpperFloors.Name = "chk02UpperFloors";
             this.chk02UpperFloors.Size = new System.Drawing.Size(86, 17);
             this.chk02UpperFloors.TabIndex = 15;
@@ -334,7 +336,7 @@
             this.chk02TerminusHotel.AutoSize = true;
             this.chk02TerminusHotel.Checked = true;
             this.chk02TerminusHotel.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk02TerminusHotel.Location = new System.Drawing.Point(3, 186);
+            this.chk02TerminusHotel.Location = new System.Drawing.Point(3, 208);
             this.chk02TerminusHotel.Name = "chk02TerminusHotel";
             this.chk02TerminusHotel.Size = new System.Drawing.Size(97, 17);
             this.chk02TerminusHotel.TabIndex = 14;
@@ -345,7 +347,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(4, 164);
+            this.label3.Location = new System.Drawing.Point(4, 187);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
@@ -357,7 +359,7 @@
             this.chk01ChinatownSquare.AutoSize = true;
             this.chk01ChinatownSquare.Checked = true;
             this.chk01ChinatownSquare.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk01ChinatownSquare.Location = new System.Drawing.Point(3, 140);
+            this.chk01ChinatownSquare.Location = new System.Drawing.Point(3, 163);
             this.chk01ChinatownSquare.Name = "chk01ChinatownSquare";
             this.chk01ChinatownSquare.Size = new System.Drawing.Size(113, 17);
             this.chk01ChinatownSquare.TabIndex = 12;
@@ -368,7 +370,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(4, 118);
+            this.label2.Location = new System.Drawing.Point(4, 141);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 13);
@@ -380,7 +382,7 @@
             this.chk00Mansion.AutoSize = true;
             this.chk00Mansion.Checked = true;
             this.chk00Mansion.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk00Mansion.Location = new System.Drawing.Point(3, 71);
+            this.chk00Mansion.Location = new System.Drawing.Point(3, 94);
             this.chk00Mansion.Name = "chk00Mansion";
             this.chk00Mansion.Size = new System.Drawing.Size(66, 17);
             this.chk00Mansion.TabIndex = 8;
@@ -428,7 +430,7 @@
             this.chk00MansionUpper.AutoSize = true;
             this.chk00MansionUpper.Checked = true;
             this.chk00MansionUpper.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk00MansionUpper.Location = new System.Drawing.Point(3, 94);
+            this.chk00MansionUpper.Location = new System.Drawing.Point(3, 117);
             this.chk00MansionUpper.Name = "chk00MansionUpper";
             this.chk00MansionUpper.Size = new System.Drawing.Size(62, 17);
             this.chk00MansionUpper.TabIndex = 79;
@@ -439,7 +441,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(4, 371);
+            this.label5.Location = new System.Drawing.Point(4, 393);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 13);
@@ -451,7 +453,7 @@
             this.chk04Courtyard.AutoSize = true;
             this.chk04Courtyard.Checked = true;
             this.chk04Courtyard.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk04Courtyard.Location = new System.Drawing.Point(3, 393);
+            this.chk04Courtyard.Location = new System.Drawing.Point(3, 415);
             this.chk04Courtyard.Name = "chk04Courtyard";
             this.chk04Courtyard.Size = new System.Drawing.Size(71, 17);
             this.chk04Courtyard.TabIndex = 23;
@@ -463,7 +465,7 @@
             this.chk04Club.AutoSize = true;
             this.chk04Club.Checked = true;
             this.chk04Club.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk04Club.Location = new System.Drawing.Point(3, 416);
+            this.chk04Club.Location = new System.Drawing.Point(3, 438);
             this.chk04Club.Name = "chk04Club";
             this.chk04Club.Size = new System.Drawing.Size(98, 17);
             this.chk04Club.TabIndex = 24;
@@ -475,7 +477,7 @@
             this.chk04DressingRooms.AutoSize = true;
             this.chk04DressingRooms.Checked = true;
             this.chk04DressingRooms.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk04DressingRooms.Location = new System.Drawing.Point(3, 439);
+            this.chk04DressingRooms.Location = new System.Drawing.Point(3, 461);
             this.chk04DressingRooms.Name = "chk04DressingRooms";
             this.chk04DressingRooms.Size = new System.Drawing.Size(103, 17);
             this.chk04DressingRooms.TabIndex = 25;
@@ -487,7 +489,7 @@
             this.chk04DerelictBuilding.AutoSize = true;
             this.chk04DerelictBuilding.Checked = true;
             this.chk04DerelictBuilding.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk04DerelictBuilding.Location = new System.Drawing.Point(3, 462);
+            this.chk04DerelictBuilding.Location = new System.Drawing.Point(3, 484);
             this.chk04DerelictBuilding.Name = "chk04DerelictBuilding";
             this.chk04DerelictBuilding.Size = new System.Drawing.Size(102, 17);
             this.chk04DerelictBuilding.TabIndex = 26;
@@ -499,7 +501,7 @@
             this.chk04Store.AutoSize = true;
             this.chk04Store.Checked = true;
             this.chk04Store.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk04Store.Location = new System.Drawing.Point(3, 485);
+            this.chk04Store.Location = new System.Drawing.Point(3, 507);
             this.chk04Store.Name = "chk04Store";
             this.chk04Store.Size = new System.Drawing.Size(117, 17);
             this.chk04Store.TabIndex = 27;
@@ -511,7 +513,7 @@
             this.chk04LoadingArea.AutoSize = true;
             this.chk04LoadingArea.Checked = true;
             this.chk04LoadingArea.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk04LoadingArea.Location = new System.Drawing.Point(3, 508);
+            this.chk04LoadingArea.Location = new System.Drawing.Point(3, 530);
             this.chk04LoadingArea.Name = "chk04LoadingArea";
             this.chk04LoadingArea.Size = new System.Drawing.Size(89, 17);
             this.chk04LoadingArea.TabIndex = 28;
@@ -523,7 +525,7 @@
             this.chk04ChineseNewYear.AutoSize = true;
             this.chk04ChineseNewYear.Checked = true;
             this.chk04ChineseNewYear.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk04ChineseNewYear.Location = new System.Drawing.Point(3, 531);
+            this.chk04ChineseNewYear.Location = new System.Drawing.Point(3, 553);
             this.chk04ChineseNewYear.Name = "chk04ChineseNewYear";
             this.chk04ChineseNewYear.Size = new System.Drawing.Size(114, 17);
             this.chk04ChineseNewYear.TabIndex = 29;
@@ -639,7 +641,7 @@
             this.chk09_StretsOfHope.AutoSize = true;
             this.chk09_StretsOfHope.Checked = true;
             this.chk09_StretsOfHope.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk09_StretsOfHope.Location = new System.Drawing.Point(146, 209);
+            this.chk09_StretsOfHope.Location = new System.Drawing.Point(146, 208);
             this.chk09_StretsOfHope.Name = "chk09_StretsOfHope";
             this.chk09_StretsOfHope.Size = new System.Drawing.Size(102, 17);
             this.chk09_StretsOfHope.TabIndex = 39;
@@ -651,7 +653,7 @@
             this.chk09_Barbershop.AutoSize = true;
             this.chk09_Barbershop.Checked = true;
             this.chk09_Barbershop.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk09_Barbershop.Location = new System.Drawing.Point(146, 232);
+            this.chk09_Barbershop.Location = new System.Drawing.Point(146, 231);
             this.chk09_Barbershop.Name = "chk09_Barbershop";
             this.chk09_Barbershop.Size = new System.Drawing.Size(80, 17);
             this.chk09_Barbershop.TabIndex = 40;
@@ -662,7 +664,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(147, 256);
+            this.label10.Location = new System.Drawing.Point(147, 255);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 13);
@@ -674,7 +676,7 @@
             this.chk10_Desert.AutoSize = true;
             this.chk10_Desert.Checked = true;
             this.chk10_Desert.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk10_Desert.Location = new System.Drawing.Point(146, 278);
+            this.chk10_Desert.Location = new System.Drawing.Point(146, 277);
             this.chk10_Desert.Name = "chk10_Desert";
             this.chk10_Desert.Size = new System.Drawing.Size(79, 17);
             this.chk10_Desert.TabIndex = 42;
@@ -685,7 +687,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(147, 302);
+            this.label11.Location = new System.Drawing.Point(147, 301);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 13);
@@ -697,7 +699,7 @@
             this.chk11_DeadEnd.AutoSize = true;
             this.chk11_DeadEnd.Checked = true;
             this.chk11_DeadEnd.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk11_DeadEnd.Location = new System.Drawing.Point(146, 324);
+            this.chk11_DeadEnd.Location = new System.Drawing.Point(146, 323);
             this.chk11_DeadEnd.Name = "chk11_DeadEnd";
             this.chk11_DeadEnd.Size = new System.Drawing.Size(74, 17);
             this.chk11_DeadEnd.TabIndex = 44;
@@ -709,7 +711,7 @@
             this.chk11_OldMill.AutoSize = true;
             this.chk11_OldMill.Checked = true;
             this.chk11_OldMill.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk11_OldMill.Location = new System.Drawing.Point(146, 347);
+            this.chk11_OldMill.Location = new System.Drawing.Point(146, 346);
             this.chk11_OldMill.Name = "chk11_OldMill";
             this.chk11_OldMill.Size = new System.Drawing.Size(60, 17);
             this.chk11_OldMill.TabIndex = 45;
@@ -721,7 +723,7 @@
             this.chk11_Descent.AutoSize = true;
             this.chk11_Descent.Checked = true;
             this.chk11_Descent.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk11_Descent.Location = new System.Drawing.Point(146, 370);
+            this.chk11_Descent.Location = new System.Drawing.Point(146, 369);
             this.chk11_Descent.Name = "chk11_Descent";
             this.chk11_Descent.Size = new System.Drawing.Size(66, 17);
             this.chk11_Descent.TabIndex = 46;
@@ -733,7 +735,7 @@
             this.chk11_FactoryComp.AutoSize = true;
             this.chk11_FactoryComp.Checked = true;
             this.chk11_FactoryComp.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk11_FactoryComp.Location = new System.Drawing.Point(146, 393);
+            this.chk11_FactoryComp.Location = new System.Drawing.Point(146, 392);
             this.chk11_FactoryComp.Name = "chk11_FactoryComp";
             this.chk11_FactoryComp.Size = new System.Drawing.Size(115, 17);
             this.chk11_FactoryComp.TabIndex = 47;
@@ -744,7 +746,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(147, 417);
+            this.label12.Location = new System.Drawing.Point(147, 416);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 13);
@@ -756,7 +758,7 @@
             this.chk12_TestFacility.AutoSize = true;
             this.chk12_TestFacility.Checked = true;
             this.chk12_TestFacility.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk12_TestFacility.Location = new System.Drawing.Point(146, 439);
+            this.chk12_TestFacility.Location = new System.Drawing.Point(146, 438);
             this.chk12_TestFacility.Name = "chk12_TestFacility";
             this.chk12_TestFacility.Size = new System.Drawing.Size(82, 17);
             this.chk12_TestFacility.TabIndex = 49;
@@ -768,7 +770,7 @@
             this.chk12_Decontamination.AutoSize = true;
             this.chk12_Decontamination.Checked = true;
             this.chk12_Decontamination.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk12_Decontamination.Location = new System.Drawing.Point(146, 462);
+            this.chk12_Decontamination.Location = new System.Drawing.Point(146, 461);
             this.chk12_Decontamination.Name = "chk12_Decontamination";
             this.chk12_Decontamination.Size = new System.Drawing.Size(106, 17);
             this.chk12_Decontamination.TabIndex = 50;
@@ -780,7 +782,7 @@
             this.chk12_RnD.AutoSize = true;
             this.chk12_RnD.Checked = true;
             this.chk12_RnD.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk12_RnD.Location = new System.Drawing.Point(146, 485);
+            this.chk12_RnD.Location = new System.Drawing.Point(146, 484);
             this.chk12_RnD.Name = "chk12_RnD";
             this.chk12_RnD.Size = new System.Drawing.Size(48, 17);
             this.chk12_RnD.TabIndex = 51;
@@ -791,7 +793,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(147, 509);
+            this.label13.Location = new System.Drawing.Point(147, 508);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 13);
@@ -803,7 +805,7 @@
             this.chk13_PatriotHangar.AutoSize = true;
             this.chk13_PatriotHangar.Checked = true;
             this.chk13_PatriotHangar.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk13_PatriotHangar.Location = new System.Drawing.Point(146, 531);
+            this.chk13_PatriotHangar.Location = new System.Drawing.Point(146, 530);
             this.chk13_PatriotHangar.Name = "chk13_PatriotHangar";
             this.chk13_PatriotHangar.Size = new System.Drawing.Size(101, 17);
             this.chk13_PatriotHangar.TabIndex = 53;
@@ -815,7 +817,7 @@
             this.chk13_Arena.AutoSize = true;
             this.chk13_Arena.Checked = true;
             this.chk13_Arena.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk13_Arena.Location = new System.Drawing.Point(146, 554);
+            this.chk13_Arena.Location = new System.Drawing.Point(146, 553);
             this.chk13_Arena.Name = "chk13_Arena";
             this.chk13_Arena.Size = new System.Drawing.Size(76, 17);
             this.chk13_Arena.TabIndex = 54;
@@ -932,7 +934,7 @@
             this.chk18_CountyJail.AutoSize = true;
             this.chk18_CountyJail.Checked = true;
             this.chk18_CountyJail.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk18_CountyJail.Location = new System.Drawing.Point(267, 209);
+            this.chk18_CountyJail.Location = new System.Drawing.Point(267, 208);
             this.chk18_CountyJail.Name = "chk18_CountyJail";
             this.chk18_CountyJail.Size = new System.Drawing.Size(77, 17);
             this.chk18_CountyJail.TabIndex = 64;
@@ -944,7 +946,7 @@
             this.chk18_Outgunned.AutoSize = true;
             this.chk18_Outgunned.Checked = true;
             this.chk18_Outgunned.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk18_Outgunned.Location = new System.Drawing.Point(267, 232);
+            this.chk18_Outgunned.Location = new System.Drawing.Point(267, 231);
             this.chk18_Outgunned.Name = "chk18_Outgunned";
             this.chk18_Outgunned.Size = new System.Drawing.Size(79, 17);
             this.chk18_Outgunned.TabIndex = 65;
@@ -956,7 +958,7 @@
             this.chk18_Burn.AutoSize = true;
             this.chk18_Burn.Checked = true;
             this.chk18_Burn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk18_Burn.Location = new System.Drawing.Point(267, 255);
+            this.chk18_Burn.Location = new System.Drawing.Point(267, 254);
             this.chk18_Burn.Name = "chk18_Burn";
             this.chk18_Burn.Size = new System.Drawing.Size(48, 17);
             this.chk18_Burn.TabIndex = 66;
@@ -968,7 +970,7 @@
             this.chk18_HopeFair.AutoSize = true;
             this.chk18_HopeFair.Checked = true;
             this.chk18_HopeFair.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk18_HopeFair.Location = new System.Drawing.Point(267, 278);
+            this.chk18_HopeFair.Location = new System.Drawing.Point(267, 277);
             this.chk18_HopeFair.Name = "chk18_HopeFair";
             this.chk18_HopeFair.Size = new System.Drawing.Size(72, 17);
             this.chk18_HopeFair.TabIndex = 67;
@@ -979,7 +981,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.Location = new System.Drawing.Point(268, 302);
+            this.label17.Location = new System.Drawing.Point(268, 301);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(85, 13);
@@ -991,7 +993,7 @@
             this.chk21_TailorShop.AutoSize = true;
             this.chk21_TailorShop.Checked = true;
             this.chk21_TailorShop.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk21_TailorShop.Location = new System.Drawing.Point(267, 324);
+            this.chk21_TailorShop.Location = new System.Drawing.Point(267, 323);
             this.chk21_TailorShop.Name = "chk21_TailorShop";
             this.chk21_TailorShop.Size = new System.Drawing.Size(80, 17);
             this.chk21_TailorShop.TabIndex = 69;
@@ -1002,7 +1004,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.Location = new System.Drawing.Point(268, 348);
+            this.label18.Location = new System.Drawing.Point(268, 347);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(100, 13);
@@ -1014,7 +1016,7 @@
             this.chk22_BlackwaterPark.AutoSize = true;
             this.chk22_BlackwaterPark.Checked = true;
             this.chk22_BlackwaterPark.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk22_BlackwaterPark.Location = new System.Drawing.Point(267, 370);
+            this.chk22_BlackwaterPark.Location = new System.Drawing.Point(267, 369);
             this.chk22_BlackwaterPark.Name = "chk22_BlackwaterPark";
             this.chk22_BlackwaterPark.Size = new System.Drawing.Size(104, 17);
             this.chk22_BlackwaterPark.TabIndex = 71;
@@ -1026,7 +1028,7 @@
             this.chk22_Penthouse.AutoSize = true;
             this.chk22_Penthouse.Checked = true;
             this.chk22_Penthouse.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk22_Penthouse.Location = new System.Drawing.Point(267, 393);
+            this.chk22_Penthouse.Location = new System.Drawing.Point(267, 392);
             this.chk22_Penthouse.Name = "chk22_Penthouse";
             this.chk22_Penthouse.Size = new System.Drawing.Size(99, 17);
             this.chk22_Penthouse.TabIndex = 72;
@@ -1037,7 +1039,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label19.Location = new System.Drawing.Point(268, 417);
+            this.label19.Location = new System.Drawing.Point(268, 416);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(70, 13);
@@ -1049,7 +1051,7 @@
             this.chk24_Blackwaterroof.AutoSize = true;
             this.chk24_Blackwaterroof.Checked = true;
             this.chk24_Blackwaterroof.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk24_Blackwaterroof.Location = new System.Drawing.Point(267, 439);
+            this.chk24_Blackwaterroof.Location = new System.Drawing.Point(267, 438);
             this.chk24_Blackwaterroof.Name = "chk24_Blackwaterroof";
             this.chk24_Blackwaterroof.Size = new System.Drawing.Size(105, 17);
             this.chk24_Blackwaterroof.TabIndex = 74;
@@ -1060,7 +1062,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label20.Location = new System.Drawing.Point(268, 463);
+            this.label20.Location = new System.Drawing.Point(268, 462);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 4, 3, 5);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(66, 13);
@@ -1072,7 +1074,7 @@
             this.chk25_CementaryEntrance.AutoSize = true;
             this.chk25_CementaryEntrance.Checked = true;
             this.chk25_CementaryEntrance.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk25_CementaryEntrance.Location = new System.Drawing.Point(267, 485);
+            this.chk25_CementaryEntrance.Location = new System.Drawing.Point(267, 484);
             this.chk25_CementaryEntrance.Name = "chk25_CementaryEntrance";
             this.chk25_CementaryEntrance.Size = new System.Drawing.Size(122, 17);
             this.chk25_CementaryEntrance.TabIndex = 76;
@@ -1084,7 +1086,7 @@
             this.chk25_BurnwoodFamilyTomb.AutoSize = true;
             this.chk25_BurnwoodFamilyTomb.Checked = true;
             this.chk25_BurnwoodFamilyTomb.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk25_BurnwoodFamilyTomb.Location = new System.Drawing.Point(267, 508);
+            this.chk25_BurnwoodFamilyTomb.Location = new System.Drawing.Point(267, 507);
             this.chk25_BurnwoodFamilyTomb.Name = "chk25_BurnwoodFamilyTomb";
             this.chk25_BurnwoodFamilyTomb.Size = new System.Drawing.Size(136, 17);
             this.chk25_BurnwoodFamilyTomb.TabIndex = 77;
@@ -1096,7 +1098,7 @@
             this.chk25_Crematorium.AutoSize = true;
             this.chk25_Crematorium.Checked = true;
             this.chk25_Crematorium.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk25_Crematorium.Location = new System.Drawing.Point(267, 531);
+            this.chk25_Crematorium.Location = new System.Drawing.Point(267, 530);
             this.chk25_Crematorium.Name = "chk25_Crematorium";
             this.chk25_Crematorium.Size = new System.Drawing.Size(106, 17);
             this.chk25_Crematorium.TabIndex = 78;
@@ -1154,6 +1156,7 @@
             this.chkAutoReset.TabIndex = 4;
             this.chkAutoReset.Text = "Reset";
             this.chkAutoReset.UseVisualStyleBackColor = true;
+            this.chkAutoReset.CheckedChanged += new System.EventHandler(this.chkAutoReset_CheckedChanged);
             // 
             // tlpMain
             // 
@@ -1231,6 +1234,18 @@
             this.radialPresetAllSections.Text = "All sections";
             this.radialPresetAllSections.UseVisualStyleBackColor = true;
             this.radialPresetAllSections.CheckedChanged += new System.EventHandler(this.radialPresetAllSections_CheckedChanged);
+            // 
+            // chk00Cliffside
+            // 
+            this.chk00Cliffside.AutoSize = true;
+            this.chk00Cliffside.Checked = true;
+            this.chk00Cliffside.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk00Cliffside.Location = new System.Drawing.Point(3, 71);
+            this.chk00Cliffside.Name = "chk00Cliffside";
+            this.chk00Cliffside.Size = new System.Drawing.Size(62, 17);
+            this.chk00Cliffside.TabIndex = 80;
+            this.chk00Cliffside.Text = "Cliffside";
+            this.chk00Cliffside.UseVisualStyleBackColor = true;
             // 
             // HMASettings
             // 
@@ -1343,6 +1358,7 @@
         private System.Windows.Forms.RadioButton radialPresetOnlyLoadRemoving;
         private System.Windows.Forms.CheckBox chk00MansionUpper;
         private System.Windows.Forms.RadioButton radialPresetKotti;
+        private System.Windows.Forms.CheckBox chk00Cliffside;
 
     }
 }

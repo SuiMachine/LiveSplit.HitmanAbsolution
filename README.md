@@ -1,4 +1,4 @@
-﻿LiveSplit.HMA v0.9.5
+﻿LiveSplit.HMA v0.9.7
 =====================
 
 LiveSplit.HMA is a [LiveSplit](http://livesplit.org/) component for Hitman: Absolution.
@@ -6,7 +6,7 @@ LiveSplit.HMA is a [LiveSplit](http://livesplit.org/) component for Hitman: Abso
 Features
 --------
   * Keeps track of Game Time to get rid of loading times.
-  * Auto start/stop/reset the timer.
+  * Auto start/stop the timer.
   * Automatically pauses, if the game crashes.
   * Splits after each game section / at result screens (configurable).
   
