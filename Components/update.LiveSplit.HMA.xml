@@ -5,10 +5,10 @@
         </files>
         <changelog>
             <change>
-				Improved autoresetting logic (I think it's fixed now... finally).
+Improved autoresetting logic (I think it's fixed now... finally).
 			</change>
 			<change>
-				Removed warning about auto reseting.
+Removed warning about auto reseting.
             </change>
         </changelog>
     </update>
