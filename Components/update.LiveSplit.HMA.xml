@@ -5,7 +5,8 @@
         </files>
         <changelog>
             <change>
-				Expended logic for autoreseting (should be fixed now).\nRemoved warning.
+			Expended logic for autoreseting (should be fixed now).
+			Removed warning.
             </change>
         </changelog>
     </update>
@@ -15,8 +16,8 @@
         </files>
         <changelog>
             <change>
-				Added Cliffside split.
-				Added Warning about auto resetting.
+			Added Cliffside split.
+			Added Warning about auto resetting.
             </change>
         </changelog>
     </update>
@@ -26,7 +27,7 @@
         </files>
         <changelog>
             <change>
-				Further improved Terminus Elevator logic.
+			Further improved Terminus Elevator logic.
             </change>
         </changelog>
     </update>
@@ -36,9 +37,9 @@
         </files>
         <changelog>
             <change>
-                Added autosplitting.
-				Expended logic of Terminus Elevator load removing.
-				Added condition to handle the game crashing.
+			Added autosplitting.
+			Expended logic of Terminus Elevator load removing.
+			Added condition to handle the game crashing.
             </change>
         </changelog>
     </update>
@@ -48,7 +49,7 @@
         </files>
         <changelog>
             <change>
-                Added workaround for mid-level loadings
+			Added workaround for mid-level loadings
             </change>
         </changelog>
     </update>
@@ -58,7 +59,7 @@
         </files>
         <changelog>
             <change>
-                Initial release
+			Initial release
             </change>
         </changelog>
     </update>
