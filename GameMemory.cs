@@ -480,7 +480,7 @@ namespace LiveSplit.HMA
                                     }
                                 }, null);
 
-                                if(CurrentLevel==0 && CurrentSection==0)
+                                if(CurrentLevel==0 && CurrentSection==0 && prevLevel==0 && prevSection==0 && IsInMenu && IsInLoadingScreen)       //That should fix it.
                                 {
                                     _uiThread.Post(d =>
                                     {

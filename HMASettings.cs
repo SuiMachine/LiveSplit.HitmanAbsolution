@@ -624,8 +624,6 @@ namespace LiveSplit.HMA
 
         private void chkAutoReset_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkAutoReset.Checked == true)
-                MessageBox.Show("Warning! This may reset your splits if the game crashes. Because of that, it's not recommened to use this option.", "Warning!", MessageBoxButtons.OK);
         }
     }
 }

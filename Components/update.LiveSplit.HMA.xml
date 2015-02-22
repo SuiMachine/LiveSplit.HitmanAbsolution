@@ -1,4 +1,14 @@
 <updates>
+    <update version="1.0.0">
+        <files>
+            <file path="Components/LiveSplit.HMA.dll" status="changed"/>
+        </files>
+        <changelog>
+            <change>
+				Expended logic for autoreseting (should be fixed now).\nRemoved warning.
+            </change>
+        </changelog>
+    </update>
     <update version="0.9.7">
         <files>
             <file path="Components/LiveSplit.HMA.dll" status="changed"/>
