@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LiveSplit.ComponentUtil;
 
 namespace LiveSplit.HMA
 {
@@ -164,31 +165,11 @@ namespace LiveSplit.HMA
                 try
                 {
                     Debug.WriteLine("[NoLoads] Waiting for HMA.exe...");
-                    bool isActuallyLoading;
-                    bool prevIsInLoadingScreen = false;
-                    bool loadingStarted = false;
                     uint frameCounter = 0;
                     
                     Process game;
                     while ((game = GetGameProcess()) == null)
                     {
-                        isActuallyLoading = true;
-                        if (isActuallyLoading)
-                        {
-                            Debug.WriteLine(String.Format("[NoLoads] Load Start - {0}", frameCounter));
-
-                            loadingStarted = true;
-
-                            // pause game timer
-                            _uiThread.Post(d =>
-                            {
-                                if (this.OnLoadStarted != null)
-                                {
-                                    this.OnLoadStarted(this, EventArgs.Empty);
-                                }
-                            }, null);
-                        }
-
                         Thread.Sleep(250);
                         if (_cancelSource.IsCancellationRequested)
                         {
@@ -198,6 +179,9 @@ namespace LiveSplit.HMA
 
                     Debug.WriteLine("[NoLoads] Got games process!");
 
+                    bool isActuallyLoading;
+                    bool prevIsInLoadingScreen = false;
+                    bool loadingStarted = false;
                     bool prevIsInMenu = false;
                     bool prevIsOutOfFocus = false;
                     bool prevIsRosewoodCutscene = false;
@@ -571,7 +555,7 @@ namespace LiveSplit.HMA
                 return null;
             }
 
-            if (game.MainModule.ModuleMemorySize != (int)ExpectedDllSizes.HMASteam)
+            if (game.MainModuleWow64Safe().ModuleMemorySize != (int)ExpectedDllSizes.HMASteam)
             {
                 _ignorePIDs.Add(game.Id);
                 _uiThread.Send(d => MessageBox.Show("Unexpected game version. HMA Steam is required.", "LiveSplit.HMA",
