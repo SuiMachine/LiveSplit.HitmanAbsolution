@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeepPointer.cs" />
     <Compile Include="HMAComponent.cs" />
     <Compile Include="HMAFactory.cs" />
     <Compile Include="HMASettings.cs">
@@ -62,7 +61,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SafeNativeMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="HMASettings.resx">
