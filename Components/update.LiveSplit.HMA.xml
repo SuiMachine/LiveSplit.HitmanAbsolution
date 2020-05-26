@@ -1,11 +1,21 @@
 <updates>
-<update version="1.0.1">
-<files>
-<file path="Components/LiveSplit.HMA.dll" status="changed"/>
-</files>
-<changelog>
-<change>LiveSplit 1.6 compatibility</change>
-</changelog>
+	<update version="1.1.0">
+		<files>
+			<file path="Components/LiveSplit.HMA.dll" status="changed"/>
+		</files>
+		<changelog>
+			<change>Initial GOG release support</change>
+		</changelog>
+	</update>
+<update version="1.0.0">
+	<files>
+		<update version="1.0.1">
+	<files>
+		<file path="Components/LiveSplit.HMA.dll" status="changed"/>
+	</files>
+	<changelog>
+		<change>LiveSplit 1.6 compatibility</change>
+	</changelog>
 </update>
 <update version="1.0.0">
 <files>
@@ -52,11 +62,11 @@
 </changelog>
 </update>
 <update version="0.9.0">
-<files>
-<file path="Components/LiveSplit.HMA.dll" status="changed"/>
-</files>
-<changelog>
-<change>Initial release</change>
-</changelog>
+	<files>
+	<file path="Components/LiveSplit.HMA.dll" status="changed"/>
+	</files>
+	<changelog>
+	<change>Initial release</change>
+	</changelog>
 </update>
 </updates>

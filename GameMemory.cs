@@ -93,10 +93,12 @@ namespace LiveSplit.HMA
         private DeepPointer _Level;
         private DeepPointer _Section;
         private DeepPointer _IsResultScreen;
+        private bool isGOGversion;
 
         private enum ExpectedDllSizes
         {
             HMASteam = 36777984,
+            HMAGOG = 35799040
         }
 
         public bool[] splitStates { get; set; }
@@ -113,17 +115,6 @@ namespace LiveSplit.HMA
         {
             _settings = componentSettings;
             splitStates = new bool[(int)SplitArea.C25_Crematorium + 1];
-            _IsInLoadingScreen = new DeepPointer(0xE53E20);         //not actual, but close enough
-            _IsRosewoodCutscene = new DeepPointer(0xE321FC);
-            _IsInMenu = new DeepPointer(0xD61C7B);
-            _IsOutOfFocus = new DeepPointer(0xE31F4D);
-            _IsTerminusElevatorLoading = new DeepPointer(0x00E39520, 0x38); // == 1 if a loadscreen is happening
-            _IsFinaleExplosion = new DeepPointer(0x00D610B4, 0x8, 0x5FC, 0x10, 0x74, 0x508); // == 1 if EXPLOSION!!!!!!1
-
-            _Level = new DeepPointer(0xE20F48);         //0 for first level, some never used
-            _Section = new DeepPointer(0xD60F94);
-            _IsResultScreen = new DeepPointer(0xE213E8);
-
             resetSplitStates();
 
             _ignorePIDs = new List<int>();
@@ -166,10 +157,29 @@ namespace LiveSplit.HMA
                 {
                     Debug.WriteLine("[NoLoads] Waiting for HMA.exe...");
                     uint frameCounter = 0;
-                    
+                    bool isActuallyLoading;
+                    bool loadingStarted = false;
+
                     Process game;
                     while ((game = GetGameProcess()) == null)
                     {
+                        isActuallyLoading = true;
+                        if (isActuallyLoading)
+                        {
+                            Debug.WriteLine(String.Format("[NoLoads] Load Start - {0}", frameCounter));
+
+                            loadingStarted = true;
+
+                            // pause game timer		
+                            _uiThread.Post(d =>
+                            {
+                                if (this.OnLoadStarted != null)
+                                {
+                                    this.OnLoadStarted(this, EventArgs.Empty);
+                                }
+                            }, null);
+                        }
+
                         Thread.Sleep(250);
                         if (_cancelSource.IsCancellationRequested)
                         {
@@ -179,9 +189,7 @@ namespace LiveSplit.HMA
 
                     Debug.WriteLine("[NoLoads] Got games process!");
 
-                    bool isActuallyLoading;
                     bool prevIsInLoadingScreen = false;
-                    bool loadingStarted = false;
                     bool prevIsInMenu = false;
                     bool prevIsOutOfFocus = false;
                     bool prevIsRosewoodCutscene = false;
@@ -207,6 +215,9 @@ namespace LiveSplit.HMA
                         _Section.Deref(game, out CurrentSection);
                         _IsResultScreen.Deref(game, out IsResultScreen);
                         _IsFinaleExplosion.Deref(game, out IsFinaleExplosion);
+
+                        if (isGOGversion)
+                            IsOutOfFocus = !IsOutOfFocus;
 
                         if(CurrentLevel != prevLevel || CurrentSection != prevSection || IsResultScreen != prevIsResultScreen || IsTerminusElevatorLoading != prevIsTerminusElevatorLoading || IsFinaleExplosion != prevIsFinaleExplosion)              //All of the level splits
                         {
@@ -447,6 +458,7 @@ namespace LiveSplit.HMA
                                 }
                                 else
                                     isActuallyLoading = false;
+                                Debug.WriteLine(string.Format("IsInLoading {0}, IsInMenu {1}, IsOutOfFocus {2}, IsTerminusElevator {3}, IsRosewoodCutscene {4}", IsInLoadingScreen, IsInMenu, IsOutOfFocus, IsTerminusElevatorLoading, IsRosewoodCutscene));
                             }
 
                             if (isActuallyLoading)
@@ -555,7 +567,39 @@ namespace LiveSplit.HMA
                 return null;
             }
 
-            if (game.MainModuleWow64Safe().ModuleMemorySize != (int)ExpectedDllSizes.HMASteam)
+            var mainModuleMemorySize = game.MainModuleWow64Safe().ModuleMemorySize;
+
+            if(mainModuleMemorySize == (int)ExpectedDllSizes.HMASteam)
+            {
+                isGOGversion = false;
+                _IsInLoadingScreen = new DeepPointer(0xE53E20);         //not actual, but close enough
+                _IsRosewoodCutscene = new DeepPointer(0xE321FC);
+                _IsInMenu = new DeepPointer(0xD61C7B);
+                _IsOutOfFocus = new DeepPointer(0xE31F4D);
+                _IsTerminusElevatorLoading = new DeepPointer(0x00E39520, 0x38); // == 1 if a loadscreen is happening
+                _IsFinaleExplosion = new DeepPointer(0x00D610B4, 0x8, 0x5FC, 0x10, 0x74, 0x508); // == 1 if EXPLOSION!!!!!!1
+
+                _Level = new DeepPointer(0xE20F48);         //0 for first level, some never used
+                _Section = new DeepPointer(0xD60F94);
+                _IsResultScreen = new DeepPointer(0xE213E8);
+            }
+            else if(mainModuleMemorySize == (int)ExpectedDllSizes.HMAGOG)
+            {
+                isGOGversion = true;
+                _IsInLoadingScreen = new DeepPointer(0xC96750);         //not actual, but close enough
+                _IsRosewoodCutscene = new DeepPointer(0xC8827C);
+                _IsInMenu = new DeepPointer(0xCA983B);
+                _IsOutOfFocus = new DeepPointer(0xC9687C);
+                _IsTerminusElevatorLoading = new DeepPointer(0x00C939D0, 0x38); // == 1 if a loadscreen is happening
+                _IsFinaleExplosion = new DeepPointer(0xCA983D); // == 1 if EXPLOSION!!!!!!1 - should be updated, can't be othered
+
+
+                _Level = new DeepPointer(0xD68B08);         //0 for first level, some never used
+                _Section = new DeepPointer(0xCA8B74);
+                _IsResultScreen = new DeepPointer(0xCA983D);
+                
+            }
+            else 
             {
                 _ignorePIDs.Add(game.Id);
                 _uiThread.Send(d => MessageBox.Show("Unexpected game version. HMA Steam is required.", "LiveSplit.HMA",
