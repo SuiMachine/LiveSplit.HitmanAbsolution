@@ -1,72 +1,10 @@
 <updates>
-	<update version="1.1.0">
-		<files>
-			<file path="Components/LiveSplit.HMA.dll" status="changed"/>
-		</files>
-		<changelog>
-			<change>Initial GOG release support</change>
-		</changelog>
-	</update>
-<update version="1.0.0">
-	<files>
-		<update version="1.0.1">
-	<files>
-		<file path="Components/LiveSplit.HMA.dll" status="changed"/>
-	</files>
-	<changelog>
-		<change>LiveSplit 1.6 compatibility</change>
-	</changelog>
-</update>
-<update version="1.0.0">
+<update version="1.5.0">
 <files>
 <file path="Components/LiveSplit.HMA.dll" status="changed"/>
 </files>
 <changelog>
-<change>Improved autoresetting logic (I think it's fixed now... finally).</change>
-<change>Removed warning about auto reseting.</change>
+<change>Added some GOG support.</change>
 </changelog>
-</update>
-<update version="0.9.7">
-<files>
-<file path="Components/LiveSplit.HMA.dll" status="changed"/>
-</files>
-<changelog>
-<change>Added Cliffside split.</change>
-<change>Added Warning about auto resetting.</change>
-</changelog>
-</update>
-<update version="0.9.6">
-<files>
-<file path="Components/LiveSplit.HMA.dll" status="changed"/>
-</files>
-<changelog>
-<change>Further improved Terminus Elevator logic.</change>
-</changelog>
-</update>
-<update version="0.9.5">
-<files>
-<file path="Components/LiveSplit.HMA.dll" status="changed"/>
-</files>
-<changelog>
-<change>Added autosplitting.</change>
-<change>Expended logic of Terminus Elevator load removing.</change>
-<change>Added condition to handle the game crashing.</change>
-</changelog>
-</update>
-<update version="0.9.1">
-<files>
-<file path="Components/LiveSplit.HMA.dll" status="changed"/>
-</files>
-<changelog>
-<change>Added workaround for mid-level loadings</change>
-</changelog>
-</update>
-<update version="0.9.0">
-	<files>
-	<file path="Components/LiveSplit.HMA.dll" status="changed"/>
-	</files>
-	<changelog>
-	<change>Initial release</change>
-	</changelog>
 </update>
 </updates>
