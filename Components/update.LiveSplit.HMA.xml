@@ -1,10 +1,10 @@
 <updates>
-<update version="1.5.0">
-<files>
-<file path="Components/LiveSplit.HMA.dll" status="changed"/>
-</files>
-<changelog>
-<change>Added some GOG support.</change>
-</changelog>
-</update>
+	<update version="1.1.0">
+		<files>
+		<file path="Components/LiveSplit.HMA.dll" status="changed"/>
+		</files>
+		<changelog>
+		<change>Added some GOG support.</change>
+		</changelog>
+	</update>
 </updates>
